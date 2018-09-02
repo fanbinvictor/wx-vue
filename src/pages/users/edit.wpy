@@ -105,8 +105,7 @@
       try {
       // e.detail.value 为表单提交的数据
         let formData = e.detail.value
-
-              // 当avatarId被设置过之后则增加到 avatar_image_id 中
+        // 当avatarId被设置过之后则增加到 avatar_image_id 中
         if (this.avatarId !== 0) {
           formData.avatar_image_id = this.avatarId
         }
