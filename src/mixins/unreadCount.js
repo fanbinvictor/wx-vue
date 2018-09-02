@@ -32,7 +32,7 @@ export default class unreadCount extends wepy.mixin {
         text: this.unreadCount.toString()
       })
     } else {
-      // 移除 badge
+      // 移除 badge,没有未读消息会导致报错
       // wepy.removeTabBarBadge({
       //   index: 1
       // })
