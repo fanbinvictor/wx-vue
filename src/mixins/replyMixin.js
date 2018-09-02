@@ -32,7 +32,7 @@ export default class ReplyMixin extends wepy.mixin {
         let replies = repliesResponse.data.data
         // 获取当前用户
         let user = await this.$parent.getCurrentUser()
-        
+
         replies.forEach((reply) => {
           // 控制是否可以删除
           reply.can_delete = this.canDelete(user, reply)
@@ -67,7 +67,7 @@ export default class ReplyMixin extends wepy.mixin {
     console.log(reply);
     console.log(user);
 
-    return (reply.user_id === user.id)
+    return (reply.user_id === user.id) || this.$parent.can('manage_contents')
   }
 
   async onPullDownRefresh() {
